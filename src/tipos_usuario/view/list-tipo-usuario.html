@@ -3,7 +3,7 @@
         <h4 class="text-danger">Gerenciar Tipos de Usuários</h4>
     </div>
     <div class="col-md-3 col-12 mt-2">
-        <button class="btn btn-dark btn-block">Adicionar</button>
+        <button class="btn btn-dark btn-block btn-new">Adicionar</button>
     </div>
 </div>
 <div class="row">
@@ -12,21 +12,21 @@
             <table class="table table-hover table-responsive compact call-border" id="table-tipo-usuario">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Ações</th>
+                        <th scope="col" class="text-center">Id</th>
+                        <th scope="col" class="text-center">Nome</th>
+                        <th scope="col" class="text-center">Tipo</th>
+                        <th scope="col" class="text-center">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">
-                            <button>Visualizar</button>
-                            <button>Editar</button>
-                            <button>Excluir</button>
+                        <th scope="col" class="text-center">00</th>
+                        <th scope="col" class="text-center">Administrador do Sistema</th>
+                        <th scope="col" class="text-center">A</th>
+                        <th scope="col" class="text-center">
+                            <button class="btn btn-sm btn-info">R</button>
+                            <button class="btn btn-sm btn-warning">U</button>
+                            <button class="btn btn-sm btn-danger">D</button>
                         </th>
                     </tr>
                 </tbody>
@@ -35,7 +35,7 @@
     </table>
 </div>
 
-<div id="modal-tipo-usuario" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,3 +49,5 @@
         </div>
     </div>
 </div>
+<script src="src/tipo_usuario/controle/new-tipo_usuario.js"></script>
+<script src="src/tipo_usuario/controle/save-tipo_usuario.js"></script>
