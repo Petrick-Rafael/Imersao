@@ -1,15 +1,19 @@
-$(document).ready(function(){
+$(document).ready(function() {
+    $('.btn-new').click(function(e) {
 
-    $('.btn-new').click(function(e){
-
-        e.preventDefaut()
+        e.preventDefault()
 
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append("Novo Tipo de Usuário")
-        $('.modal-body').load('../view/form-tipo-usuario.html')
+        $('.modal-title').append('<h4 class="text-danger">Novo Tipo de Usuário</h4>')
 
-        $('#modal').modal('show')
-   })
+
+        $('.modal-body').load('src/tipos_usuario/view/form-tipo-usuario.html')
+
+      
+        $('.btn-save').attr('data-operation', 'insert')
+        
+        $('#modal-tipo-usuario').modal('show')
+    })
 })
