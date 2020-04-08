@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#btn-new').click(function(e){
+    $('.btn-new').click(function(e){
 
         e.preventDefaut()
 

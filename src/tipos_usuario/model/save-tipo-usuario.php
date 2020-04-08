@@ -20,10 +20,10 @@
 
             if ($requestData['operacao'] == 'insert') {
 
-                $sql = "INSERT INTO tipo_usuarios VALUES (NULL, '$nome', '$tipo')";
+                $sql = "INSERT INTO tipos_usuarios VALUES (NULL, '$nome', '$tipo')";
             }else{
 
-                $sql = "UPDATE `tipo_usuarios` SET `nome` = '$nome', `tipo` = '$tipo' WHERE `idusuario` = $idTipoUsuario";
+                $sql = "UPDATE `tipos_usuarios` SET `nome` = '$nome', `tipo` = '$tipo' WHERE `idusuario` = $idTipoUsuario";
             }
 
             $resultado = mysqli_query($con, $sql);
