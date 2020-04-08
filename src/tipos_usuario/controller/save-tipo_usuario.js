@@ -12,7 +12,7 @@ $(document).ready(function() {
             dataType: 'json', 
             assync: true, 
             data: dados, 
-            url: 'src/tipo_usuario/modelo/save-tipo_usuario.php', 
+            url: 'src/tipos_usuario/model/save-tipo_usuario.php', 
             success: function(dados) { 
                 Swal.fire({ 
                     title: 'SysBlog', 

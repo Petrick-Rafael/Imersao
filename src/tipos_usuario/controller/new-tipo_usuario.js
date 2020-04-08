@@ -13,7 +13,7 @@ $(document).ready(function() {
 
       
         $('.btn-save').attr('data-operation', 'insert')
-        
+
         $('#modal-tipo-usuario').modal('show')
     })
 })
