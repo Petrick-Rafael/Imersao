@@ -7,14 +7,27 @@ $(document).ready(function(){
             "url": "src/tipo_usuario/modelo/list-tipo-usuario.php",
             "type": "POST"
         },
+        "language": {
+            "url": "dataTables.brazil.json"
+        },
         "columns": [
-            { "data": 'idtipo_usuario' },
-            { "data": 'nome' },
-            { "data": 'tipo' },
+            {
+                 "data": 'idtipo_usuario',
+                 "className": 'text-center'
+            },
+            {
+                 "data": 'nome',
+                 "className": 'text-center'
+            },
+            { 
+                "data": 'tipo',
+                "className": 'text-center' 
+            },
             {
                 "data": 'idtipo_usuario',
                 "orderable": false,
                 "searchable": false,
+                "className": 'text-center',
                 "render": function(data, type, row, meta){
                     return `
                         <button id="${data}" class="btn btn-info btn-sm">R</button>
