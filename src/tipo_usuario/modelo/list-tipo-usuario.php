@@ -31,7 +31,7 @@
         $inicio = $requestData['start'];
         $tamanho = $requestData['lenght'];
 
-        $sql .= " ORDER BY $ordem $direcao LIMIT $inicio $tamanho ";
+        $sql .= " ORDER BY $ordem $direcao LIMIT $inicio, $tamanho ";
         $resultado = mysqli_query($conexao, $sql);
         $dados = array();
         while ($row = mysqli_fetch_assoc($resultado)) {
