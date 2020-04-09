@@ -25,7 +25,7 @@
         $totalFiltrados = mysqli_num_rows($resultado);
 
         $colunaOrdem = $requestData['order'][0]['column'];
-        $ordem = $requestData[$colunaOrdem]['data'];
+        $ordem = $colunas[$colunaOrdem]['data'];
         $direcao = $requestData['order'][0]['dir'];
 
         $inicio = $requestData['start'];
