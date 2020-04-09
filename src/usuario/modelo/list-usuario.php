@@ -8,8 +8,8 @@
         
         $colunas = $requestData['columns'];
 
-        $sql = "SELECT u.idusuario, u.nome, u.email, t.tipo as tipo_usuario FROM USUARIOS u 
-        INNER JOIN TIPOS_USUARIOS ON u.idtipo_usuario = t.idtipo_usuario
+        $sql = "SELECT u.idusuario, u.nome, u.email, t.nome as tipo_usuario FROM USUARIOS u 
+        INNER JOIN TIPOS_USUARIOS t ON u.idtipo_usuario = t.idtipo_usuario
         WHERE 1=1 ";
 
         $resultado = mysqli_query($conexao, $sql);
@@ -19,7 +19,7 @@
 
         if( !empty( $filtro ) ){
             $sql .= " AND (u.idusuario LIKE '$filtro%' ";
-            $sql .= " OR u.ome LIKE '$filtro%' ";
+            $sql .= " OR u.nome LIKE '$filtro%' ";
             $sql .= " OR u.email LIKE '$filtro%') ";
             $sql .= " OR t.nome LIKE '$filtro%') ";
         }

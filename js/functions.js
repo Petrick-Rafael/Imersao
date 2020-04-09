@@ -1,11 +1,11 @@
-$(document).ready(function(){
-    $('#tipo-usuario').click(function(){
+$(document).ready(function() {
+    $('#tipo-usuario').click(function() {
         $('#conteudo').empty()
-        $('#conteudo').load("src/tipos_usuario/view/list-tipo-usuario.html")
+        $('#conteudo').load('src/tipo_usuario/visao/list-tipo-usuario.html')
     })
-    
-    $('#usuario').click(function(){
+
+    $('#usuario').click(function() {
         $('#conteudo').empty()
-        $('#conteudo').load("src/usuario/view/list-usuario.html")
+        $('#conteudo').load('src/usuario/visao/list-usuario.html')
     })
 })
