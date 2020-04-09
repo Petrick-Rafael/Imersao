@@ -8,7 +8,7 @@
         
         $colunas = $requestData['columns'];
 
-        $sql = "SELECT `idtipo_usuario`, `nome`, `tipo` FROM `tipos_usuarios` WHERE 1=1 ";
+        $sql = "SELECT idtipo_usuario, nome, tipo FROM TIPOS_USUARIOS WHERE 1=1 ";
 
         $resultado = mysqli_query($conexao, $sql);
         $qtdeLinhas = mysqli_num_rows($resultado);
