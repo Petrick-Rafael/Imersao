@@ -35,7 +35,6 @@
                 $sql = "INSERT INTO categorias VALUES (null, '$nome')";
             } else { //Caso contrário, ou qualquer valor diferente de 'insert'
 
-                //Prepara o comando sql para executar o UPDATE
                 $sql = "UPDATE categorias SET nome='$nome' WHERE idcategoria = $idCategoria";
             }
 
