@@ -13,7 +13,7 @@
         $colunas = $requestData['columns'];
 
         //Preparar o comando sql para obter os dados do tipo_usuario
-        $sql = "SELECT idcategoraia, nome FROM categorias WHERE 1=1 ";
+        $sql = "SELECT idcategoria, nome FROM categorias WHERE 1=1 ";
 
         //Obter o total de registros cadastrados
         $resultado = mysqli_query($conexao, $sql);
