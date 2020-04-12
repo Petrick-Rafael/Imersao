@@ -32,7 +32,7 @@ $(document).ready(function() {
                 "render": function(data, type, row, meta) {
                     return `
                             <button id="${data}" class="btn btn-info btn-sm">R</button>
-                            <button id="${data}" class="btn btn-primary btn-sm">U</button>
+                            <button id="${data}" class="btn btn-primary btn-sm btn-edit">U</button>
                             <button id="${data}" class="btn btn-danger btn-sm">D</button>
                     `
                 }
