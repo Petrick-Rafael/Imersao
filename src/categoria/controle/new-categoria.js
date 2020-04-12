@@ -10,21 +10,10 @@ $(document).ready(function() {
         $('.modal-body').empty()
 
         // Aqui iremos deternimar qual será o título que deverá aparecer no nosso modal
-        $('.modal-title').append('<h4 class="text-danger">Novo Usuário</h4>')
+        $('.modal-title').append('<h4 class="text-danger">Nova categoria</h4>')
 
         // Aqui será inserido o formulário do arquivo que criamos anteriomente na pasta visão onde ficam nossos HTML
-        $('.modal-body').load('src/usuario/visao/form-usuario.html', function() {
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                url: 'src/tipo_usuario/modelo/all-tipo_usuario.php',
-                success: function(dados) {
-                    for (const dado of dados) {
-                        $('#tipo_usuario').append(`<option value="${dado.idtipo_usuario}">${dado.nome}</option>`)
-                    }
-                }
-            })
-        })
+        $('.modal-body').load('src/categoria/visao/form-categoria.html')
 
         // Uma vez que nosso Back-end aguarda os dados do formulário porém também qual o tipo de operação, iremos incluir no botão de salvar uma nova propriedade
         // onde será incluído uma nova propiedade chamada data-operation que não tem aplicação prática em função alguma, porém será útil para
@@ -32,6 +21,6 @@ $(document).ready(function() {
         $('.btn-save').attr('data-operation', 'insert')
 
         // Por fim iremos apresentar o modal na tela
-        $('#modal-usuario').modal('show')
+        $('#modal-categoria').modal('show')
     })
 })

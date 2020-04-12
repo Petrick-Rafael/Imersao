@@ -13,10 +13,7 @@
         $colunas = $requestData['columns'];
 
         //Preparar o comando sql para obter os dados do tipo_usuario
-        $sql = "SELECT u.idusuario, u.nome, u.email, t.nome as tipo_usuario 
-                FROM USUARIOS u
-                INNER JOIN TIPOS_USUARIOS t ON u.idtipo_usuario = t.idtipo_usuario
-                WHERE 1=1 ";
+        $sql = "SELECT idtipo_usuario, nome, tipo FROM TIPOS_USUARIOS WHERE 1=1 ";
 
         //Obter o total de registros cadastrados
         $resultado = mysqli_query($conexao, $sql);
@@ -27,10 +24,9 @@
         if( !empty( $filtro ) ){
             //Montar a expressão lógica que irá compor os filtros
             //Aqui você deverá determinar quais colunas farão parte do filtro
-            $sql .= " AND (u.idusuario LIKE '$filtro%' ";
-            $sql .= " OR u.nome LIKE '$filtro%' ";
-            $sql .= " OR u.email LIKE '$filtro%' ";
-            $sql .= " OR t.nome LIKE '$filtro%') ";
+            $sql .= " AND (idtipo_usuario LIKE '$filtro%' ";
+            $sql .= " OR nome LIKE '$filtro%' ";
+            $sql .= " OR tipo LIKE '$filtro%') ";
         }
         //Obter o total dos dados filtrados
         $resultado = mysqli_query($conexao, $sql);

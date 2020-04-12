@@ -10,7 +10,7 @@
         $requestData = $_REQUEST;
 
         //Verifica se existe(m) campo(s) obrigatório(s) vazio(s)
-        if(empty($requestData['nome']) || empty($requestData['email']) || empty($requestData['idtipo_usuario']) || empty($requestData['senha'])){
+        if(empty($requestData['nome']) || empty($requestData['email']) || empty($requestData['senha']) || empty($requestData['idtipo_usuario'])){
 
             //Caso exista, definir um objeto array para retorno
             $dados = array(
@@ -26,7 +26,7 @@
             $idUsuario = isset($requestData['idusuario']) ? $requestData['idusuario'] : ''; 
             //utf8_decode() - decodifica string, assumido ser codificada em UTF-8, para ISO-8859-1.
             $nome = utf8_decode($requestData['nome']);
-            $email = utf8_encode($requestData['email']);
+            $email = $requestData['email'];
             $senha = $requestData['senha'];
             $idTipoUsuario = $requestData['idtipo_usuario'];
             $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
@@ -35,11 +35,11 @@
             if($operacao == 'insert'){
 
                 //Prepara o comando sql para executar o INSERT
-                $sql = "INSERT INTO USUARIOS VALUES (null,'$nome', '$email', '$senha', '$idTipoUsuario')";
+                $sql = "INSERT INTO USUARIOS(nome, email, senha, idtipo_usuario) VALUES ('$nome', '$email', '$senha', '$idTipoUsuario')";
             } else { //Caso contrário, ou qualquer valor diferente de 'insert'
 
                 //Prepara o comando sql para executar o UPDATE
-                $sql = "UPDATE USUARIOS SET nome='$nome', email='$email', $senha = '$senha', idtipo_usuario='$idTipoUsuario' WHERE idusuario = $idUsuario";
+                $sql = "UPDATE USUARIOS SET nome='$nome', email='$email', senha='$senha', idtipo_usuario='$idTipoUsuario' WHERE idusuario = $idUsuario";
             }
 
             //Executa a operação em questão
