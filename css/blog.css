@@ -5,3 +5,9 @@
 .mt-n5 {
     margin-top: -3rem !important;
 }
+.jumbotron{
+    background-image: url("../images/knowledge-1052010.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
