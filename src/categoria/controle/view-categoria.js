@@ -7,15 +7,15 @@ $(document).ready(function(){
         $(".modal-title").empty()
         $(".modal-body").empty()
 
-        $(".modal-title").append('<h4 class="text-danger">Visualizar Tipo de Usuário</h4>')
+        $(".modal-title").append('<h4 class="text-danger">Visualizar Categoria</h4>')
 
-        let idtipo_usuario = `idcategoria=${$(this).attr('id')}`
+        let idcategoria = `idcategoria=${$(this).attr('id')}`
 
         $.ajax({
             type: 'POST',
             dataType: 'json',
             async: true,
-            data: idtipo_usuario,
+            data: idcategoria,
             url: "src/categoria/modelo/view-categoria.php",
             success: function(dado){
                 if (dado.tipo == 'success') {

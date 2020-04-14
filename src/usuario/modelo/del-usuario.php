@@ -4,31 +4,31 @@
 
     $dados = array(
         'tipo' => 'info',
-        'mensagem' => 'Não foi possível fazer a conexao'
+        'mensagem' => 'Não foi possível conectar ao banco de dados...'
     );
 
     if ($conexao) {
         
-        $idCategoria = $_REQUEST['idcategoria'];
+        $idUsuario = $_REQUEST['idusuario'];
 
-        $sql = "DELETE FROM CATEGORIAS WHERE idcategoria = $idCategoria";
+        $sql = "DELETE FROM USUARIOS WHERE idusuario = $idUsuario";
 
         $resultado = mysqli_query($conexao, $sql);
-
+        
         if ($resultado) {
             
             $dados = array(
                 'tipo' => 'success',
-                'mensagem' => 'Categoria deletada com sucesso'
+                'mensagem' => 'Usuário deletado com sucesso'
             );
         }else{
             $dados = array(
                 'tipo' => 'error',
-                'mensagem' => 'Não foi possível deletar a categoria'
+                'mensagem' => 'Não foi possível deletar usuário'
             );
         }
 
         mysqli_close($conexao);
     }
-    
+
     echo json_encode($dados);
