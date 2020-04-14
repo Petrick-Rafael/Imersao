@@ -1,11 +1,11 @@
-<form id="id-noticia" action="">
+<form id="form-noticia" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label >Data</label>
         <input class="form-control" type="datetime" id="data_noticia" name="data_noticia">
     </div>
     <div class="form-group">
         <label >Título</label>
-        <input class="form-control" type="titulo" id="titulo" name="titulo">
+        <input class="form-control" type="text" id="titulo" name="titulo">
     </div>
     <div class="form-group">
         <label >Corpo</label>
@@ -15,5 +15,9 @@
         <label >Imagem</label>
         <input class="form-control-file" type="file" id="imagem" name="imagem">
     </div>
-    <input type="hidden" id="idnoticia">
+    <input type="hidden" id="idnoticia" name="idnoticia">
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="mdi mdi-close-circle"></i> Fechar</button>
+        <button type="submit" class="btn btn-primary btn-save"><i class="mdi mdi-content-save"></i> Salvar mudanças</button>
+    </div>
 </form>
