@@ -1,23 +1,24 @@
 <form id="form-noticia" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-        <label >Data</label>
-        <input class="form-control" type="datetime" id="data_noticia" name="data_noticia">
+        <label>Data</label>
+        <input type="datetime" id="data_noticia" name="data_noticia" class="form-control">
     </div>
     <div class="form-group">
-        <label >Título</label>
-        <input class="form-control" type="text" id="titulo" name="titulo">
+        <label>Título</label>
+        <input type="text" id="titulo" name="titulo" class="form-control">
     </div>
     <div class="form-group">
-        <label >Corpo</label>
-            <textarea id="corpo" class="form-control" name="corpo" cols="30" rows="10"></textarea>
+        <label>Corpo</label>
+        <textarea name="corpo" id="corpo" class="form-control" cols="30" rows="5"></textarea>
     </div>
     <div class="form-group">
-        <label >Imagem</label>
-        <input class="form-control-file" type="file" id="imagem" name="imagem">
+        <label>Categoria</label>
+        <select name="idcategoria" id="idcategoria" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Imagem</label>
+        <input type="file" name="imagem" id="imagem" class="form-control-file">
     </div>
     <input type="hidden" id="idnoticia" name="idnoticia">
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="mdi mdi-close-circle"></i> Fechar</button>
-        <button type="submit" class="btn btn-primary btn-save"><i class="mdi mdi-content-save"></i> Salvar mudanças</button>
-    </div>
 </form>

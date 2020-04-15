@@ -11,7 +11,8 @@
 
             $idNoticia = isset($requestData['idnoticia']) ? $requestData['idnoticia'] : '';
             $titulo = utf8_decode($requestData['titulo']);
-            $corpo = preg_replace("/(\\r)?\\n/i", "<br/>", $resquestData['corpo']);
+            $corpo = preg_replace("/(\\r)?\\n/i", "<br/>", $requestData['corpo']);
+            $corpo = utf8_decode($corpo);
             $dataNoticia = str_replace('/','-',$requestData['data_noticia']);
             $dataNoticia = date('Y-m-d H:i:s', strtotime($dataNoticia));
             $idCategoria = $requestData['idcategoria'];
