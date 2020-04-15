@@ -26,6 +26,7 @@ $(document).ready(function(){
                         $('#email').val(dado.dados.email)
 
                         $('#senha').val(dado.dados.senha)
+                        $('#senha').attr('readonly', true)
 
                         if (dado.dados.tipo == 'A') {
                             var tipo = "Administrador";
