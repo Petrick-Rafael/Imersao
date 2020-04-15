@@ -37,7 +37,7 @@ $(document).ready(function() {
                     return `
                     <button id="${data}" class="btn btn-info btn-sm btn-view"><i class="mdi mdi-eye"></i></button>
                     <button id="${data}" class="btn btn-primary btn-sm btn-edit"><i class="mdi mdi-pencil"></i></button>
-                    <button id="${data}" class="btn btn-danger btn-sm btn-delete"><i class="mdi mdi-trash-can"></i></button>
+                    <button id="${data}" class="btn btn-danger btn-sm btn-del"><i class="mdi mdi-trash-can"></i></button>
                     `
                 }
             }

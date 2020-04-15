@@ -14,16 +14,16 @@ $(document).ready(function() {
 
         // Aqui será inserido o formulário do arquivo que criamos anteriomente na pasta visão onde ficam nossos HTML
         $('.modal-body').load('src/noticia/visao/form-noticia.html', function() {
-            // $.ajax({
-            //     type: 'POST',
-            //     dataType: 'json',
-            //     url: 'src/tipo_usuario/modelo/all-tipo_usuario.php',
-            //     success: function(dados) {
-            //         for (const dado of dados) {
-            //             $('#tipo_usuario').append(`<option value="${dado.idtipo_usuario}">${dado.nome}</option>`)
-            //         }
-            //     }
-            // })
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: 'src/tipo_usuario/modelo/all-tipo_usuario.php',
+                success: function(dados) {
+                    for (const dado of dados) {
+                        $('#tipo_usuario').append(`<option value="${dado.idtipo_usuario}">${dado.nome}</option>`)
+                    }
+                }
+            })
         })
 
         // Uma vez que nosso Back-end aguarda os dados do formulário porém também qual o tipo de operação, iremos incluir no botão de salvar uma nova propriedade

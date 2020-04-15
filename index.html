@@ -7,6 +7,8 @@
     <title>Blog - Semana de Imersão</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="libs/sweetalert2/dist/sweetalert2.css">
+    <link rel="stylesheet" href="libs/MaterialDesign-Webfont-master/css/materialdesignicons.css">
 </head>
 
 <body>
@@ -24,24 +26,36 @@
         <div id="menu" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Início</a>
+                    <a class="nav-link text-white" id="initial">Início</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Notícias</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categoria
+                    </a>
+                    <div class="dropdown-menu" id="menu-categoria" aria-labelledby="navbarDropdown"></div>
+                  </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Categorias</a>
+                    <a class="nav-link text-white" id="subscript">Assine</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Assine</a>
+                    <a class="nav-link text-white" id="">Login</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <div class="container" id="content">
+        
+    </div>
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="libs/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="src/categoria/controle/menu-categoria.js"></script>
 </body>
 
 </html>
