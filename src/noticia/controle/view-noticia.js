@@ -32,10 +32,22 @@ $(document).ready(function(){
 
                         $('#corpo').val(dado.dados.corpo)
                         $('#corpo').attr('readonly', 'true')
-
-                        $('#imagem').val(dado.dados.imagem)
-                        $('#imagem').attr('readonly', 'true')
-
+                        
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            url: 'src/categoria/modelo/all-categoria.php',
+                            success: function(dados) {
+                                for (const result of dados) {
+                                    if (dado.dados.idcategoria == result.idcategoria)
+                                        $('#idcategoria').append(`<option value="${result.idcategoria}">${result.nome}</option>`)
+                                }
+                            }
+                        })
+                        $('#idcategoria').attr('readonly', 'true')
+                        $('#imagem').after(`<img src="src/noticia/modelo/${dado.dados.imagem}" class="img-thumbnail">`)
+                        $('#imagem').hide()
+                        $('.btn-save').hide()
                     })
 
                     $("#modal-noticia").modal('show')
