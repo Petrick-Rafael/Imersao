@@ -1,22 +1,55 @@
 $(document).ready(function(){
 
-    $.ajax({
-        type: "POST",  
-        dataType: "json",
-        assync: true,
-        url: "src/noticia/modelo/last-noticia.php",
-        success: function(dados){
-            for (const dado of dados) {
-                $('#last-noticia').append(`
-                <div class="col-md-6 col-12 mt-3">
-                    <img src="src/noticia/modelo/${dado.imagem}" class="img-fluid img-thumbnail">
-                    <h6>${dado.data_noticia}</h6>
-                    <h3>${dado.titulo}</h3>
-                    <p>${dado.corpo.substring(0, 200)}...</p>
-                    <button id="${dado.idnoticia}" class="btn btn-primary btn-sm btn-view"><i class="mdi mdi-plus-circle"></i>Detalhe</button>
-                </div>
-                `)
-            }
-        }   
+    $('.dropdown-item').click(function(e){
+
+        e.preventDefault()
+
+        var idcategoria = `idcategoria=${$(this).attr('id')}`
+
+        $("#last-noticia").empty()
+
+        $.ajax({
+                type: "POST",  
+                dataType: "json",
+                assync: true,
+                data: idcategoria,
+                url: "src/noticia/modelo/last-noticia.php",
+                success: function(dados){
+                    for (const dado of dados) {
+                        $('#last-noticia').append(`
+                        <div class="col-md-6 col-12 mt-3">
+                            <img src="src/noticia/modelo/${dado.imagem}" class="img-fluid img-thumbnail">
+                            <h6>${dado.data_noticia}</h6>
+                            <h3>${dado.titulo}</h3>
+                            <h6>${dado.categoria}</h6>
+                            <p>${dado.corpo.substring(0, 200)}...</p>
+                            <button id="${dado.idnoticia}" class="btn btn-primary btn-sm btn-view"><i class="mdi mdi-plus-circle"></i>Detalhe</button>
+                        </div>
+                        `)
+                    }
+                }   
+            })
+        })
+        
+            $.ajax({
+                type: "POST",  
+                dataType: "json",
+                assync: true,
+                url: "src/noticia/modelo/last-noticia.php",
+                success: function(dados){
+                    for (const dado of dados) {
+                        $('#last-noticia').append(`
+                        <div class="col-md-6 col-12 mt-3">
+                            <img src="src/noticia/modelo/${dado.imagem}" class="img-fluid img-thumbnail">
+                            <h6>${dado.data_noticia}</h6>
+                            <h3>${dado.titulo}</h3>
+                            <h6>${dado.categoria}</h6>
+                            <p>${dado.corpo.substring(0, 200)}...</p>
+                            <button id="${dado.idnoticia}" class="btn btn-primary btn-sm btn-view"><i class="mdi mdi-plus-circle"></i>Detalhe</button>
+                        </div>
+                        `)
+                    }
+                    $('body').append('<script src="src/noticia/controle/view-external-noticia.js"></script>')
+                }   
+            })
     })
-})

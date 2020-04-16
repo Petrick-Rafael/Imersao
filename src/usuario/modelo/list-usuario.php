@@ -13,7 +13,7 @@
         $colunas = $requestData['columns'];
 
         //Preparar o comando sql para obter os dados do tipo_usuario
-        $sql = "SELECT u.idusuario, u.nome, u.email, u.senha, t.nome as tipo_usuario 
+        $sql = "SELECT u.idusuario, u.nome, u.email, t.nome as tipo_usuario 
                 FROM USUARIOS u
                 INNER JOIN TIPOS_USUARIOS t ON u.idtipo_usuario = t.idtipo_usuario
                 WHERE 1=1 ";

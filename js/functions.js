@@ -23,6 +23,8 @@ $(document).ready(function() {
         $('#conteudo').empty()
         $('#conteudo').load('src/comentario/visao/list-comentario.html')
     })
+
+    
     //fim das funcionalidades do menu - painel gerencial
 
 
@@ -31,7 +33,10 @@ $(document).ready(function() {
     $("#initial").click(function(){
         $("#content").load("index.html")
     })
-
+    $('#news').click(function() {
+        $('#content').empty()
+        $('#content').load('src/noticia/visao/all-noticia.html')
+    })
     $('#subscript').click(function(){
         $("#content").load('src/usuario/visao/form-usuario.html', function(){
             

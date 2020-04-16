@@ -10,10 +10,10 @@ $(document).ready(function() {
         $('.modal-body').empty()
 
         // Aqui iremos deternimar qual será o título que deverá aparecer no nosso modal
-        $('.modal-title').append('<h4 class="text-danger">Nova Noticia</h4>')
+        $('.modal-title').append('<h4 class="text-danger">Novo Usuário</h4>')
 
         // Aqui será inserido o formulário do arquivo que criamos anteriomente na pasta visão onde ficam nossos HTML
-        $('.modal-body').load('src/noticia/visao/form-noticia.html', function() {
+        $('.modal-body').load('src/usuario/visao/form-usuario.html', function() {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
